@@ -5,7 +5,7 @@ import Input from "./components/input";
 import Button from "./components/button";
 import TodoItem from "./components/todo-item";
 import { useDispatch, useSelector } from "react-redux";
-import {toggleTodo, deleteTodo, addTodo, allDeleteTodo} from './redux/todo/actions'
+import {toggleTodo, deleteTodo, addTodo } from './redux/todo/actions'
 import { getTodos } from './redux/todo/selectors'
 import { filterTodo } from "./redux/filter/action";
 import { getActiveFilter } from "./redux/filter/selectors";
@@ -38,9 +38,7 @@ function App() {
   const handleDeleteTodo = (id) => {
     dispatch(deleteTodo(id))
   }
-  const handleAllDeleteTodo = (id) => {
-    
-  }
+  
   
   const activeTodoFilter = useSelector(getActiveFilter)
 
@@ -78,6 +76,7 @@ function App() {
   }
   return (
     <div className={styles.container}>
+      <h1>Todo List</h1>
       <form onClick={handleClick}>
         <Input 
           value={inputValue}
@@ -94,7 +93,7 @@ function App() {
         <Button onClick={() => dispatch(filterTodo("SHOW_ALL"))}>All</Button>
         <Button onClick={() => dispatch(filterTodo("SHOW_ACTIVE"))}>Active</Button>
         <Button onClick={() => dispatch(filterTodo("SHOW_COMPLETED"))}>Completed</Button>
-        <Button onClick={handleAllDeleteTodo}>All delete</Button>
+        <Button>Completed &#128465;</Button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { ADD_TODO, ALL_DELETE_TODO, DELETE_TODO, TOGGLE_TODO } from "./types"
+import { ADD_TODO, DELETE_TODO, TOGGLE_TODO } from "./types"
 
 const addTodo = (text) => ({
     type: ADD_TODO,
@@ -19,14 +19,11 @@ const deleteTodo = (id) => ({
     payload: id
 })
 
-const allDeleteTodo = (id) => ({
-    type: ALL_DELETE_TODO,
-    payload: id
-})
+
 
 export {
     addTodo,
     toggleTodo,
-    deleteTodo,
-    allDeleteTodo
+    deleteTodo
+
 }
